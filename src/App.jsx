@@ -50,7 +50,22 @@ const portfolioData = {
       ]
     }
   ],
-  
+
+  education: [
+    {
+      degree: "Master of Science in Business Analytics",
+      school: "Southern Methodist University, Cox School of Business",
+      location: "Dallas, TX",
+      period: "Aug 2023 — May 2024"
+    },
+    {
+      degree: "Bachelor of Business Administration, Information Systems Concentration",
+      school: "Southern Methodist University, Cox School of Business",
+      location: "Dallas, TX",
+      period: "Aug 2019 — Jun 2023"
+    }
+  ],
+
   certifications: [
     "Microsoft Excel Expert",
     "Certified Scrum Master",
@@ -155,7 +170,7 @@ function App() {
     const handleScroll = () => {
       setScrollY(window.scrollY)
       
-      const sections = ['hero', 'stats', 'expertise', 'experience', 'projects', 'contact']
+      const sections = ['hero', 'stats', 'expertise', 'experience', 'education', 'projects', 'contact']
       for (const section of sections) {
         const el = document.getElementById(section)
         if (el) {
@@ -190,10 +205,10 @@ function App() {
       
       {/* Side navigation */}
       <nav className="side-nav">
-        {['hero', 'stats', 'expertise', 'experience', 'projects', 'contact'].map(section => (
-          <NavDot 
-            key={section} 
-            section={section} 
+        {['hero', 'stats', 'expertise', 'experience', 'education', 'projects', 'contact'].map(section => (
+          <NavDot
+            key={section}
+            section={section}
             active={activeSection === section}
             onClick={scrollTo}
           />
@@ -324,7 +339,30 @@ function App() {
           ))}
         </div>
       </section>
-      
+
+      {/* Education Section */}
+      <section id="education" className="experience-section">
+        <div className="section-header">
+          <h2>Education</h2>
+        </div>
+        <div className="timeline">
+          {portfolioData.education.map((edu, i) => (
+            <div key={i} className="timeline-item">
+              <div className="timeline-marker">
+                <div className="marker-dot" />
+                <div className="marker-line" />
+              </div>
+              <div className="timeline-content">
+                <div className="job-period">{edu.period}</div>
+                <h3 className="job-role">{edu.degree}</h3>
+                <div className="job-company">{edu.school}</div>
+                <div className="job-company">{edu.location}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="projects-section">
         <div className="section-header">
