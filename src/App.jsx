@@ -359,7 +359,7 @@ function App() {
         <div className="contact-content">
           <div className="section-label">Connect</div>
           <h2>Let's Work Together</h2>
-          <p>Interested in discussing data governance challenges or opportunities? I'd love to hear from you.</p>
+          <p>Interested in discussing solving data problems or have any data questions? Feel free to reach out!</p>
           <div className="contact-links">
             <a href={`mailto:${portfolioData.email}`} className="contact-link">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
