@@ -1,156 +1,100 @@
-# Nolan Cutler - Data Governance Portfolio
+Nolan Cutler — Data Governance Portfolio
 
-A sophisticated portfolio site built with React + Vite, featuring TIAA brand colors and designed for Data Governance professionals. Features animated statistics, skill visualizations, and a refined dark theme.
+This repository contains the source code for my personal portfolio website, which highlights my professional experience, technical skill set, and measurable impact across data governance, analytics, and automation initiatives.
 
-![Portfolio Preview](preview.png)
+🔗 Live site: https://nbcutler.github.io/nbcutler/
 
-## ✨ Features
+Overview
 
-- **Editorial Design Aesthetic** — Clean, professional look with warm copper accents
-- **Animated Statistics** — Number counters and skill bars with smooth animations
-- **Responsive Layout** — Works beautifully on desktop, tablet, and mobile
-- **Side Navigation** — Elegant dot navigation for desktop users
-- **Performance Optimized** — Built with Vite for fast loading
-- **GitHub Pages Ready** — Includes automatic deployment workflow
+I am a Data Governance Analyst with experience designing governance frameworks, building automated data quality solutions, and delivering analytics-driven business impact across financial services and enterprise environments.
 
-## 🚀 Quick Start
+This portfolio is intentionally designed to:
 
-### Local Development
+Communicate quantified impact (cost savings, efficiency gains, scale)
 
-```bash
-# Install dependencies
-npm install
+Demonstrate technical fluency beyond slideware
 
-# Start development server
-npm run dev
+Reflect how I think about trusted data foundations in practice
 
-# Build for production
-npm run build
+The site is built as a modern single-page application to mirror how I approach production-quality data solutions: structured, maintainable, and outcome-focused.
 
-# Preview production build
-npm run preview
-```
+What You’ll Find
+📊 Impact & Metrics
 
-### Deploy to GitHub Pages
+Concrete examples of business value delivered, including:
 
-1. **Create a GitHub repository** for your portfolio
+$2M+ annual savings from data architecture and quality improvements
 
-2. **Push your code:**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-   git push -u origin main
-   ```
+200–300% acceleration in validation workflows through automation
 
-3. **Configure GitHub Pages:**
-   - Go to Repository → Settings → Pages
-   - Under "Build and deployment", select **GitHub Actions**
-   - The included workflow will automatically deploy on push to `main`
+$20K/month savings via Python-based data quality tooling
 
-4. **Update base path (if needed):**
-   If your repo isn't named `username.github.io`, update `vite.config.js`:
-   ```js
-   base: '/your-repo-name/',
-   ```
+Scalable systems tracking 2,000+ daily user interactions
 
-## 📝 Customization
+🧠 Core Expertise
 
-### Update Your Information
+Data Governance & Stewardship
 
-Edit the `portfolioData` object in `src/App.jsx`:
+Metadata & Lineage Management (Collibra, Purview)
 
-```jsx
-const portfolioData = {
-  name: "Your Name",
-  title: "Your Title",
-  tagline: "Your professional tagline",
-  email: "your.email@example.com",
-  linkedin: "linkedin.com/in/yourprofile",
-  github: "github.com/yourusername",
-  
-  stats: [
-    { value: "50+", label: "Your Metric" },
-    // ... more stats
-  ],
-  
-  expertise: [
-    { area: "Your Skill", level: 90 },
-    // ... more skills
-  ],
-  
-  experience: [
-    {
-      role: "Your Role",
-      company: "Company Name",
-      period: "2022 — Present",
-      highlights: ["Achievement 1", "Achievement 2"]
-    },
-    // ... more experience
-  ],
-  
-  // ... projects, certifications, tools
-}
-```
+Data Quality Rules & Validation Frameworks
 
-### Customize Colors
+Python Automation (Streamlit, pandas)
 
-The portfolio uses TIAA's brand colors. Edit CSS variables in `src/index.css`:
+SQL & Cloud Data Warehousing
 
-```css
-:root {
-  --tiaa-blue: #041459;        /* TIAA Primary Blue */
-  --tiaa-light-blue: #305AF3;  /* TIAA Light Blue */
-  --tiaa-teal: #00AD97;        /* TIAA Teal (accent) */
-  --bg-primary: #041459;       /* Main background */
-  --bg-secondary: #030f42;     /* Section backgrounds */
-  --accent: #00AD97;           /* Accent color */
-  --highlight: #305AF3;        /* Highlight color */
-}
-```
+BI & Visualization (Tableau, Power BI)
 
-### Change Fonts
+💼 Professional Experience
 
-The portfolio uses:
-- **Instrument Serif** — Display headings
-- **DM Sans** — Body text
+Highlights from roles at:
 
-To change fonts, update the Google Fonts import in `index.css` and the `--font-display` / `--font-body` variables.
+TIAA — Data Governance Analyst
 
-## 📁 Project Structure
+DriveTime — Marketing Data Analyst
 
-```
-portfolio/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml      # GitHub Actions deployment
-├── src/
-│   ├── App.jsx             # Main component & data
-│   ├── index.css           # Styles
-│   └── main.jsx            # React entry point
-├── index.html              # HTML template
-├── package.json            # Dependencies
-├── vite.config.js          # Vite configuration
-└── README.md               # This file
-```
+Each role emphasizes decision impact, not just responsibilities.
 
-## 🎨 Design Philosophy
+🚀 Projects
 
-This portfolio uses **TIAA's brand identity**:
+Selected academic and professional projects demonstrating:
 
-- **Deep navy blue** (#041459) as the primary background
-- **Vibrant teal** (#00AD97) for accents and highlights
-- **Light blue** (#305AF3) for secondary highlights
-- **Clean white** typography for maximum readability
-- **Subtle animations** add polish without distraction
-- **Data-driven components** (skill bars, animated stats) reinforce expertise
+Forecasting & optimization
 
-## 📄 License
+Experimental design and A/B testing
 
-MIT License — feel free to use this template for your own portfolio!
+Large-scale data analysis and visualization
 
----
+Leadership in technical team environments
 
-Built with ❤️ using React + Vite
+Technical Stack
+
+This portfolio itself is built using:
+
+Frontend: React + Vite
+
+Styling: Custom CSS (animation- and performance-focused)
+
+Deployment: GitHub Pages via GitHub Actions
+
+Tooling: GitHub, npm, modern ES modules
+
+The codebase reflects clean component structure, state-driven UI updates, and production-style deployment practices.
+
+Why This Exists
+
+Recruiters often see:
+
+resumes without context, or
+
+dashboards without explanation
+
+This portfolio bridges that gap by pairing technical execution with business narrative—the same way effective data governance work must operate within an organization.
+
+Contact
+
+📧 Email: nbcutler@smu.edu
+
+🔗 LinkedIn: https://linkedin.com/in/nolancutler
+
+I’m always open to conversations about data governance, analytics strategy, and roles focused on building trusted, scalable data ecosystems.
