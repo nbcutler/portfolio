@@ -4,17 +4,18 @@ import { useState, useEffect } from 'react'
 const portfolioData = {
   name: "Nolan Cutler",
   title: "Data Governance Analyst",
-  tagline: "Building trusted data foundations through governance frameworks, automation, and strategic insights at TIAA.",
+  tagline: "Building trusted data foundations through governance frameworks, automation, and strategic insights.",
   email: "nbcutler@smu.edu",
   phone: "(214) 683-5480",
   linkedin: "linkedin.com/in/nolancutler",
+  github: "github.com/nbcutler",
   location: "Dallas, TX",
   
   stats: [
     { value: "$2M+", label: "Annual Savings from Data Improvements" },
     { value: "300%", label: "Faster Data Quality Checks" },
     { value: "$20K", label: "Monthly Savings via Automation" },
-    { value: "2K+", label: "Daily User Interactions Tracked" },
+    { value: "2K+", label: "Daily User Interactions Tracked Through Engineered Database" },
   ],
   
   expertise: [
@@ -384,7 +385,7 @@ function App() {
           </div>
         </div>
         <div className="footer">
-          <p>© 2024 {portfolioData.name}. Crafted with precision.</p>
+          <p>© 2025 {portfolioData.name}. Crafted with precision.</p>
         </div>
       </section>
     </div>
