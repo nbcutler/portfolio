@@ -3,7 +3,7 @@
 This repository contains the source code for my personal portfolio website, showcasing my professional experience, technical skill set, and measurable business impact across **data governance, analytics, and automation** initiatives.
 
 🔗 **Live Site:**  
-👉 https://nbcutler.github.io/nbcutler/
+👉 https://nbcutler.github.io/portfolio/
 
 ---
 
