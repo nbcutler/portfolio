@@ -4,20 +4,19 @@ import { useState, useEffect } from 'react'
 const portfolioData = {
   name: "Nolan Cutler",
   title: "Data Governance Analyst",
-  tagline: "Building trusted data foundations through governance frameworks, automation, and strategic insights.",
+  tagline: "Building trusted data foundations through governance frameworks, automation, and strategic insights at TIAA.",
   email: "nbcutler@smu.edu",
   phone: "(214) 683-5480",
   linkedin: "linkedin.com/in/nolancutler",
-  github: "github.com/nbcutler",
   location: "Dallas, TX",
-  
+
   stats: [
-    { value: "$2M+", label: "Annual Savings from Data Improvements" },
-    { value: "300%", label: "Faster Data Quality Checks" },
-    { value: "$20K", label: "Monthly Savings via Automation" },
-    { value: "2K+", label: "Daily User Interactions Tracked Through Engineered Database" },
+    { value: "$2M+", label: "Budget Accuracy Improvements through Data Engineering" },
+    { value: "300%", label: "Faster Data Quality Checks with Tailored Data Solution" },
+    { value: "$20K", label: "Monthly Savings via Program Written in Python & Streamlit" },
+    { value: "2K+", label: "Daily User Interactions Tracked via Engineered Database and Pipeline" },
   ],
-  
+
   expertise: [
     { area: "Data Governance & Stewardship", level: 95 },
     { area: "Metadata Management (Collibra, Purview)", level: 92 },
@@ -26,7 +25,7 @@ const portfolioData = {
     { area: "SQL & Data Warehousing", level: 90 },
     { area: "BI & Visualization (Tableau, Power BI)", level: 85 },
   ],
-  
+
   experience: [
     {
       role: "Data Governance Analyst",
@@ -51,34 +50,19 @@ const portfolioData = {
     }
   ],
 
-  education: [
-    {
-      degree: "Master of Science in Business Analytics",
-      school: "Southern Methodist University, Cox School of Business",
-      location: "Dallas, TX",
-      period: "Aug 2023 — May 2024"
-    },
-    {
-      degree: "Bachelor of Business Administration, Information Systems Concentration",
-      school: "Southern Methodist University, Cox School of Business",
-      location: "Dallas, TX",
-      period: "Aug 2019 — Jun 2023"
-    }
-  ],
-
   certifications: [
     "Microsoft Excel Expert",
     "Certified Scrum Master",
-    "DAMA-DMBOK",
+    "DAMA-DMBOK Certified Data Management Professional",
     "CAPM (In Progress)"
   ],
-  
+
   tools: [
     "Collibra", "Purview", "Databricks", "Snowflake", "AWS/S3", "Azure",
-    "Airflow", "Alteryx", "Python", "Streamlit", "SQL", "Tableau", 
+    "Airflow", "Alteryx", "Python", "Streamlit", "SQL", "Tableau",
     "Power BI", "Salesforce", "Workday/WQL", "Jira", "GitLab/GitHub"
   ],
-  
+
   projects: [
     {
       title: "Dynamic Ticket Pricing Model",
@@ -98,52 +82,39 @@ const portfolioData = {
 // Animated number counter
 function AnimatedNumber({ value, duration = 2000 }) {
   const [display, setDisplay] = useState("0")
-  
+
   useEffect(() => {
     const numericValue = parseFloat(value.replace(/[^0-9.]/g, ''))
     const suffix = value.replace(/[0-9.]/g, '')
     const startTime = Date.now()
-    
+
     const animate = () => {
       const elapsed = Date.now() - startTime
       const progress = Math.min(elapsed / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
       const current = Math.floor(numericValue * eased)
-      
+
       setDisplay(current + suffix)
-      
+
       if (progress < 1) {
         requestAnimationFrame(animate)
       } else {
         setDisplay(value)
       }
     }
-    
+
     const timer = setTimeout(animate, 500)
     return () => clearTimeout(timer)
   }, [value, duration])
-  
+
   return <span>{display}</span>
 }
 
-// Skill bar component
-function SkillBar({ area, level, delay }) {
-  const [width, setWidth] = useState(0)
-  
-  useEffect(() => {
-    const timer = setTimeout(() => setWidth(level), delay)
-    return () => clearTimeout(timer)
-  }, [level, delay])
-  
+// Skill item component
+function SkillItem({ area }) {
   return (
     <div className="skill-item">
-      <div className="skill-header">
-        <span className="skill-name">{area}</span>
-        <span className="skill-level">{level}%</span>
-      </div>
-      <div className="skill-track">
-        <div className="skill-fill" style={{ width: `${width}%` }} />
-      </div>
+      <span className="skill-name">{area}</span>
     </div>
   )
 }
@@ -151,7 +122,7 @@ function SkillBar({ area, level, delay }) {
 // Navigation dot component
 function NavDot({ section, active, onClick }) {
   return (
-    <button 
+    <button
       className={`nav-dot ${active ? 'active' : ''}`}
       onClick={() => onClick(section)}
       aria-label={`Navigate to ${section}`}
@@ -165,12 +136,12 @@ function NavDot({ section, active, onClick }) {
 function App() {
   const [activeSection, setActiveSection] = useState('hero')
   const [scrollY, setScrollY] = useState(0)
-  
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY)
-      
-      const sections = ['hero', 'stats', 'expertise', 'experience', 'education', 'projects', 'contact']
+
+      const sections = ['hero', 'stats', 'expertise', 'experience', 'projects', 'contact']
       for (const section of sections) {
         const el = document.getElementById(section)
         if (el) {
@@ -182,11 +153,11 @@ function App() {
         }
       }
     }
-    
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-  
+
   const scrollTo = (section) => {
     document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -202,10 +173,10 @@ function App() {
           <div key={i} className="grid-line-v" style={{ left: `${i * 5}%` }} />
         ))}
       </div>
-      
+
       {/* Side navigation */}
       <nav className="side-nav">
-        {['hero', 'stats', 'expertise', 'experience', 'education', 'projects', 'contact'].map(section => (
+        {['hero', 'stats', 'expertise', 'experience', 'projects', 'contact'].map(section => (
           <NavDot
             key={section}
             section={section}
@@ -214,7 +185,7 @@ function App() {
           />
         ))}
       </nav>
-      
+
       {/* Hero Section */}
       <section id="hero" className="hero">
         <div className="hero-content">
@@ -242,7 +213,7 @@ function App() {
             <div className="orb-ring ring-2" />
             <div className="orb-ring ring-3" />
             <div className="orb-core">
-              <span>DG</span>
+              <img src={`${import.meta.env.BASE_URL}nolanheadshot.jpg`} alt="Nolan Cutler" />
             </div>
           </div>
         </div>
@@ -251,7 +222,7 @@ function App() {
           <div className="scroll-line" />
         </div>
       </section>
-      
+
       {/* Stats Section */}
       <section id="stats" className="stats-section">
         <div className="section-label">Impact</div>
@@ -267,7 +238,7 @@ function App() {
           ))}
         </div>
       </section>
-      
+
       {/* Expertise Section */}
       <section id="expertise" className="expertise-section">
         <div className="section-header">
@@ -277,11 +248,9 @@ function App() {
         <div className="expertise-content">
           <div className="skills-list">
             {portfolioData.expertise.map((skill, i) => (
-              <SkillBar 
-                key={skill.area} 
-                area={skill.area} 
-                level={skill.level}
-                delay={800 + i * 150}
+              <SkillItem
+                key={skill.area}
+                area={skill.area}
               />
             ))}
           </div>
@@ -311,7 +280,7 @@ function App() {
           </div>
         </div>
       </section>
-      
+
       {/* Experience Section */}
       <section id="experience" className="experience-section">
         <div className="section-header">
@@ -334,29 +303,6 @@ function App() {
                     <li key={j}>{h}</li>
                   ))}
                 </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Education Section */}
-      <section id="education" className="experience-section">
-        <div className="section-header">
-          <h2>Education</h2>
-        </div>
-        <div className="timeline">
-          {portfolioData.education.map((edu, i) => (
-            <div key={i} className="timeline-item">
-              <div className="timeline-marker">
-                <div className="marker-dot" />
-                <div className="marker-line" />
-              </div>
-              <div className="timeline-content">
-                <div className="job-period">{edu.period}</div>
-                <h3 className="job-role">{edu.degree}</h3>
-                <div className="job-company">{edu.school}</div>
-                <div className="job-company">{edu.location}</div>
               </div>
             </div>
           ))}
@@ -391,13 +337,13 @@ function App() {
           ))}
         </div>
       </section>
-      
+
       {/* Contact Section */}
       <section id="contact" className="contact-section">
         <div className="contact-content">
           <div className="section-label">Connect</div>
           <h2>Let's Work Together</h2>
-          <p>Interested in discussing solving data problems or have any data questions? Feel free to reach out!</p>
+          <p>Interested in discussing data governance challenges or opportunities? I'd love to hear from you.</p>
           <div className="contact-links">
             <a href={`mailto:${portfolioData.email}`} className="contact-link">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -423,7 +369,7 @@ function App() {
           </div>
         </div>
         <div className="footer">
-          <p>© 2025 {portfolioData.name}. Crafted with precision.</p>
+          <p>© 2026 {portfolioData.name}. Crafted with precision.</p>
         </div>
       </section>
     </div>
