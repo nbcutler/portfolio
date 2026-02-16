@@ -8,6 +8,7 @@ const portfolioData = {
   email: "nbcutler@smu.edu",
   phone: "(214) 683-5480",
   linkedin: "linkedin.com/in/nolancutler",
+  github: "github.com/ncutler",
   location: "Dallas, TX",
 
   stats: [
